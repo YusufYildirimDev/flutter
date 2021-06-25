@@ -1,9 +1,88 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pets/about/about.dart';
+import 'package:pets/profilePage/liked.dart';
+import 'package:pets/profilePage/profileSettings.dart';
+import 'package:pets/profilePage/saved.dart';
+import 'package:pets/profilePage/usage.dart';
+
+
+
+
 
 class ProfilePage extends StatelessWidget {
+  static BuildContext thisContext;
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    thisContext=context;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Neşeli Yürüyüşler"),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        actions: [
+          PopupMenuButton<String>(
+           onSelected:choiceAction,
+            itemBuilder: (BuildContext context)=><PopupMenuEntry<String>>[
+            const PopupMenuItem(
+              value: "Settings",
+              child: Text("Profil Ayarları"),),
+              const PopupMenuItem(
+              value: "Liked",
+              child: Text("Beğendiklerim"),),
+             const PopupMenuItem(
+              value: "About",
+              child: Text("Hakkımızda"),),
+              const PopupMenuItem(
+              value: "Saved",
+              child: Text("Kaydedilenler"),),
+              const PopupMenuItem(
+              value: "Usage",
+              child: Text("Günlük Kullanım"),),
+          ] 
+          )
+        ],
+        ),
+      body: profilePageBody(),
+    );
+  }
+
+  void choiceAction(String choice)
+  {
+    if(choice=="About")
+    {
+      Navigator.push(ProfilePage.thisContext,
+                    CupertinoPageRoute(builder: (context) => About()));
+    }
+    if(choice=="Settings")
+    {
+      Navigator.push(ProfilePage.thisContext,
+                    CupertinoPageRoute(builder: (context) => ProfileSettings()));
+    }
+    if(choice=="Saved")
+    {
+      Navigator.push(ProfilePage.thisContext,
+                    CupertinoPageRoute(builder: (context) => Saved()));
+    }
+    if(choice=="Liked")
+    {
+      Navigator.push(ProfilePage.thisContext,
+                    CupertinoPageRoute(builder: (context) => Liked()));
+    }
+    if(choice=="Usage")
+    {
+      Navigator.push(ProfilePage.thisContext,
+                    CupertinoPageRoute(builder: (context) => Usage()));
+    }
+  }
+
+}
+
+
+
+Widget profilePageBody()
+{
+  return ListView(
       children: [
         Stack(
           children: [
@@ -48,7 +127,7 @@ class ProfilePage extends StatelessWidget {
                           color: Colors.black),
                     ),
                     Text(
-                      "Ceren01",
+                      "theCeren",
                       style: TextStyle(
                           fontSize: 15.0,
                           fontWeight: FontWeight.bold,
@@ -60,5 +139,6 @@ class ProfilePage extends StatelessWidget {
         )
       ],
     );
-  }
 }
+
+

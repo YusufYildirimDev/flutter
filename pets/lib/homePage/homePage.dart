@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pets/messageBox/messageBox.dart';
 import 'package:pets/profilePage/profile.dart';
 import 'package:pets/searchPanel/searchPage.dart';
 
@@ -23,20 +22,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  CupertinoPageRoute(builder: (context) => MessageBox()));
-            },
-            child: Icon(Icons.send),
-          )
-        ],
-        automaticallyImplyLeading: false,
-        title: Text("Neşeli Yürüyüşler"),
-        centerTitle: true,
-      ),
       body: _pageList[selectedPage],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedPage,

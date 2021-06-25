@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "412413324732",
+    "project_id": "neseliyuruyusler",
+    "storage_bucket": "neseliyuruyusler.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412413324732:android:056b096db1022a15070fb9",
+        "android_client_info": {
+          "package_name": "com.example.pets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412413324732-j5jeib7ghnv3gumf11o3ig2jk2fon8oa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIL8dLq1yKEp3CuVxyZuKaRlhnb8bKhwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412413324732-j5jeib7ghnv3gumf11o3ig2jk2fon8oa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
